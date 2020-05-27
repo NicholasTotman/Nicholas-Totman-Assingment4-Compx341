@@ -12,6 +12,7 @@ var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?";
 var OPENWEATHERURALEND = "&appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 //&appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 //api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
+//http://api.openweathermap.org/data/2.5/weather?q=Auckland&appid=6b7b471967dd0851d0010cdecf28f829&units=metric
 
 exports.getWeather = function(req, res) {
 	var city = req.query.city;
