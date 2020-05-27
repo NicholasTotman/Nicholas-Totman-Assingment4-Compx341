@@ -7,7 +7,11 @@ var request = REQUEST.defaults( {
     strictSSL: false
 });
 
-var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
+//var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
+var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?";
+var OPENWEATHERURALEND = "&appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
+//&appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
+//api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
 
 exports.getWeather = function(req, res) {
 	var city = req.query.city;
@@ -15,7 +19,7 @@ exports.getWeather = function(req, res) {
 		return res.status(400).send('city missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&city=' + city + ',nz';
+	var aurl = OPENWEATHERURL + 'q=' + city + ',nz' + OPENWEATHERURALEND;
 
 	request({
 		method: 'GET',
