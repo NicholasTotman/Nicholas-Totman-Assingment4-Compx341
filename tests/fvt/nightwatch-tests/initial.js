@@ -17,13 +17,13 @@ module.exports = {
         await demodoi.navigate().waitForElementVisible('@inputText');
 
         await demodoi.setValue('@inputText', [
-            '78641',
+            'wellington',
             browser.Keys.ENTER
           ]);
     
         await demodoi.waitForElementVisible('@table');
 
-        cityName.expect.element('@firstApp').text.to.equal('Leander');
+        cityName.expect.element('@firstApp').text.to.equal('wellington');
     },
 
     'Navigate to the DemoDOI - invalid zip': async (browser) => {
@@ -32,7 +32,7 @@ module.exports = {
         await demodoi.navigate().waitForElementVisible('@inputText');
 
         await demodoi.setValue('@inputText', [
-            '90000',
+            'hamil',
             browser.Keys.ENTER
           ]);
     
@@ -47,12 +47,12 @@ module.exports = {
         await demodoi.navigate().waitForElementVisible('@inputText');
 
         await demodoi.setValue('@inputText', [
-            'ABCDE',
+            '..22/',
             browser.Keys.ENTER
           ]);
     
         await demodoi.waitForElementNotPresent('@table');
 
-        demodoi.expect.element('@invalidCity').text.to.equal('* should be a 5 digit number only');
+        demodoi.expect.element('@invalidCity').text.to.equal('* should be a valid city name only');
     },
 };
