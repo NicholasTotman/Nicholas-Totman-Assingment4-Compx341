@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\launchConfigurations",
+    "\\public",
+    "\\routes",
+    "\\src",
+    "\\src\\components",
+    "\\src\\containers",
+    "\\tests",
+    "\\tests\\fvt",
+    "\\tests\\server"
+  ],
+  "SelectedNode": "\\src\\App.js",
+  "PreviewInSolutionExplorer": false
+}

@@ -2,38 +2,45 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AppHeader from './components/AppHeader';
 import AppContainer from './containers/AppContainer';
+//import GoogleMaps from './components/GoogleMaps';
 import './App.css';
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+//import {
+ //   GoogleMap,
+//    useLoadScript,
+ //   Marker,
+ //   InfoWindow,
+//} from "react-google-maps/api";
 
-function Map() {
-	return (
-		<GooogleMap
-			defaultZoom={10}
-			defaultCenter={{ lat: -40.900558, lng: 174.885971 }}
-		/>
-	);
-}
-const WrappedMap = withScriptjs(withGoogleMap(Map));
-
+const mapContainerStlye = {
+    width: '100vw',
+    height: '100vh',
+};
+const center = {
+    lat: -40.900558,
+    lng: 174.885971,
+};
 
 function App() {
-  return (
-    <div className="App">
-      <AppHeader />
-      <AppContainer />
-      
-    </div>
-    <div style={{width: '50vw', weight: '50vh'}}>
-    	<WrappedMap
-      	googleMapURL = {'https://maps.googleapis.com/maps/api/js?key=AIzaSyCg6iDTbehjszVDTPE5942FLEVuqxQbsys&callback=initMap'}
-      	loadingElements={<div style={{height: 100%}} />}
-      	containerElements={<div style={{height: 100%}} />}
-      	mapElements={<div style={{height: 100%}} />}
-      
-    </div>
+    //  const { isLoaded, loadError } = useLoadScript({
+    //     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    // });
+
+    // if (loadError) return "Error loading maps";
+    //   if (!isLoaded) return "Loading Maps";
+
+    return (
+        <div className="App">
+            <AppHeader />
+            <AppContainer />
+
+
+        </div>
+        
+    );
+
+
     
-    
-  );
 }
+
 
 export default App;
