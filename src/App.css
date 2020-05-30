@@ -21,3 +21,12 @@
 .App-link {
   color: #09d3ac;
 }
+
+#map {
+    height: 79vh;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
