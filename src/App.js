@@ -4,8 +4,12 @@ import AppHeader from './components/AppHeader';
 import AppContainer from './containers/AppContainer';
 import './App.css';
 import { render } from 'react-dom';
+import * as nzData from './nz.json';
+import Zip from './components/Zip';
 
 class App extends Component {
+  nzCities = nzData
+  
     componentDidMount() {
         this.renderMap()
     }
@@ -18,8 +22,45 @@ class App extends Component {
         // Create A Map
         var map = new window.google.maps.Map(document.getElementById('map'), {
             center: { lat: -40.900558, lng: 174.885971 },
-            zoom: 6
+            zoom: 6,
+           // disableDefaultUI: true,
+
+           
         })
+        var infowindow = new window.google.maps.InfoWindow()
+        // Display Dynamic Markers
+        {
+            nzData.cities.map(nzCities => {
+
+                 var contentString = `${nzCities.city}`
+
+                // Create A Marker
+                var marker = new window.google.maps.Marker({
+                    position: { lat: nzCities.lat, lng: nzCities.lng },
+                    map: map,
+                    title: nzCities.city
+                })
+
+                // Click on A Marker!
+                 marker.addListener('mouseover', function () {
+
+                // Change the content
+                 infowindow.setContent(contentString)
+
+                // Open An InfoWindow
+                  infowindow.open(map, marker)
+                 })
+                marker.addListener('click', function () {
+                    Zip.validate(contentString)
+
+                })
+
+            })
+        }
+        
+        
+        
+       
        
     }
     render() {

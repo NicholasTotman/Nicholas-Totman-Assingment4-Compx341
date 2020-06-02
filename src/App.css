@@ -8,6 +8,7 @@
 }
 
 .App-header {
+    position: absolute;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,6 +25,7 @@
 
 #map {
     height: 79vh;
+    disableDefaultUI: true
 }
 html, body {
     height: 100%;
