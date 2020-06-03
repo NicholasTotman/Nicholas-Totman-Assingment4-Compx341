@@ -17,7 +17,9 @@ function ZipResponse(props) {
 
     if(props.responseData.cod === 200) {
         return (
-            <div className="col-sm-8">
+            
+           <div className="col-sm-8">
+          
                 <table className="table table-info table-hover">
                     <tbody>
                         <tr>
@@ -49,8 +51,11 @@ function ZipResponse(props) {
                             <td>{props.responseData.weather[0].description}</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                   
             </div>
+            
+
         )
     }
     return null

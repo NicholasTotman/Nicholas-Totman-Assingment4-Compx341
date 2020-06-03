@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Zip(props) {
+export function Zip(props) {
 
     const [validationError, setValidationError] = useState(null);
 
@@ -35,6 +35,13 @@ function Zip(props) {
                             if (event.key === "Enter") {
                                 validate(event);
                             }
+                        }}
+                        onFocus={(event) => {
+                            if (event.target.value != "") {
+                                validate(event);
+                            }
+                                
+                          
                         }}
                     ></input>   
                 </div>

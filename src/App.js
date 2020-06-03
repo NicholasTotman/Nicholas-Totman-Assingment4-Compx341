@@ -3,13 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AppHeader from './components/AppHeader';
 import AppContainer from './containers/AppContainer';
 import './App.css';
-import { render } from 'react-dom';
 import * as nzData from './nz.json';
 import Zip from './components/Zip';
 
+//import { getWeather } from '../routes/apiv1';
+
 class App extends Component {
   nzCities = nzData
-  
+ //   properties = props
+
     componentDidMount() {
         this.renderMap()
     }
@@ -51,8 +53,8 @@ class App extends Component {
                   infowindow.open(map, marker)
                  })
                 marker.addListener('click', function () {
-                    Zip.validate(contentString)
-
+                    document.getElementById("usr").value = contentString
+                    document.getElementById("usr").focus()                       
                 })
 
             })
@@ -84,4 +86,4 @@ function loadScript(url) {
     script.defer = true
     index.parentNode.insertBefore(script, index)
 }
-export default App;
+export default(App);
